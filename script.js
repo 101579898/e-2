@@ -7,7 +7,7 @@ function preload(){
 
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(400, 600);
 }
 
 function draw() {
@@ -25,11 +25,16 @@ function draw() {
 
  //list and place elements
   Object.values (list).map((item, index) => {
-    fill("red");
-    rect(50, index * 30 + 70, item.amount, 10);
+    fill(item.color);
+    rect(50, index * 30 + 70, item.amount / 180 * 300, 10);
     textSize(10);
     textAlign("left");
+    fill("black");
     text(item.name, 50, index * 30 + 65);
+
+    textSize(20);
+    textAlign("right");
+    text(item.icon, 50, index * 30 + 75);
   })
 
 
